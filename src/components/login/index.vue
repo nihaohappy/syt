@@ -132,8 +132,7 @@ const getCode=async()=>{
 }
 let form=ref<any>();
 const login=async ()=>{
-    let result=form.value.validate();//表单组件总的校验，保证表单项都符合条件
-    console.log();
+    await form.value.validate();//表单组件总的校验，保证表单项都符合条件
 
     try{
         await userStore.userLogin(loginParam);
