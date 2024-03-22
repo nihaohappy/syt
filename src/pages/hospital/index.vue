@@ -36,7 +36,7 @@
             <RouterView/>
         </div>
     </div>
-    <Login/>
+    <Login v-if="userStore.visiable"/>
 </template>
 
 <script setup lang="ts">
@@ -48,10 +48,12 @@ import {
   HomeFilled,
   Setting
 } from '@element-plus/icons-vue'
+import {useUserStore} from '@/store/modules/user.ts';
 import {useDetailStore} from '@/store/modules/hospitalDetail.ts';
 import { onMounted } from 'vue';
 import { useRouter,useRoute } from 'vue-router';
 const detailStore=useDetailStore();
+const userStore=useUserStore();
 const router=useRouter();
 const route=useRoute();
 onMounted(async()=>{
