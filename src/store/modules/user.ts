@@ -38,6 +38,10 @@ export const useUserStore=defineStore('User',{
                 return Promise.reject(new Error(result.message));
             }
             
+        },
+        logout(){
+            this.userInfo={name:'',token:''};
+            REMOVE_TOKEN();
         }
     },
     getters:{
