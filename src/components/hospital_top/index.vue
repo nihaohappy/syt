@@ -20,7 +20,7 @@
                             <el-dropdown-item>实名认证</el-dropdown-item>
                             <el-dropdown-item>挂号订单</el-dropdown-item>
                             <el-dropdown-item>就诊人管理</el-dropdown-item>
-                            <el-dropdown-item>退出登录</el-dropdown-item>
+                            <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
                             
                         </el-dropdown-menu>
                     </template>
@@ -41,6 +41,11 @@ const showLogin = () => {
 let router = useRouter();
 const goHome = () => {
     router.push({ path: '/home' })
+}
+
+const logout=()=>{
+    userStore.logout();
+    router.push({path:'/home'});
 }
 </script>
 
