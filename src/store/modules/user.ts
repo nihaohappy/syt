@@ -2,7 +2,7 @@ import {defineStore} from 'pinia'
 import { reqCode,reqUserLogin } from '@/api/hospital';
 import type {loginData,UserLoginResponceData,UserInfo} from '@/api/hospital/type';
 import type {userState} from '../interface/index'
-import { GET_INFO,SET_INFO } from '@/utils/user';
+import { GET_INFO,SET_INFO,REMOVE_TOKEN } from '@/utils/user';
 export const useUserStore=defineStore('User',{
     state():userState {
         return {
