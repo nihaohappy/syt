@@ -87,7 +87,7 @@
                 </el-col>
             </el-row>
             <template #footer>
-                <el-button type="primary"  size="default">关闭窗口</el-button>
+                <el-button type="primary"  size="default" @click="close">关闭窗口</el-button>
             </template>
         </el-dialog>
     </div>
@@ -115,6 +115,10 @@ let isPhone=computed(()=>{
     return reg.test(loginParam.phone);
 })
 
+const close=()=>{
+    userStore.visiable=false;
+}
+    
 const getCode=async()=>{
     flag.value=true;
 
